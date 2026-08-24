@@ -68,10 +68,24 @@ Based on patches from:
 Built on the official [MorpheApp/morphe-patches-template](https://github.com/MorpheApp/morphe-patches-template).
 
 <!-- PATCHES_START EXPANDED -->
+> **[v1.0.0](https://github.com/V4n1X/morphe-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;4 patches total
+<details open>
+<summary>📦 SoundCloud&nbsp;&nbsp;•&nbsp;&nbsp;4 patches</summary>
+<br>
 
-<!-- Do not modify this section by hand. The patch list is generated when release.yml creates a new release. -->
+**🎯 Supported versions:**
 
-&nbsp;
+| 2026.08.19-release |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
+|----------|----------------|-----------|
+| [AMOLED dark theme](#amoled-dark-theme) | Changes the default dark theme to use true blacks for AMOLED screens. |  |
+| [Disable analytics](#disable-analytics) | Disables SoundCloud's analytics. |  |
+| [Disable consent popup](#disable-consent-popup) | Disables the OneTrust consent/cookies popup on first launch. |  |
+| [Enable SoundCloud Go](#enable-soundcloud-go) | Enables SoundCloud Go premium features. |  |
+
+</details>
 
 <!-- PATCHES_END -->
 
