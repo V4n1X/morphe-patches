@@ -17,6 +17,11 @@ patches {
 val patchListGeneratorClasspath = configurations.create("patchListGeneratorClasspath")
 
 dependencies {
+    implementation(libs.morphe.patches.library)
+
+    // Required due to smali, or build fails. Can be removed once smali is bumped.
+    implementation(libs.guava)
+
     compileOnly(libs.gson)
     patchListGeneratorClasspath(libs.gson)
 }
