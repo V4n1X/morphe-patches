@@ -75,8 +75,8 @@ Built on the official [MorpheApp/morphe-patches-template](https://github.com/Mor
 
 **🎯 Supported versions:**
 
-| 2026.07.03-release | 2026.08.19-release |
-| :---: | :---: |
+| 2026.08.26-release |
+| :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
