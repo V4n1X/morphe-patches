@@ -7,39 +7,6 @@ Patches for use with [Morphe](https://morphe.software).
 A collection of bytecode/resource patches for Android apps, built for the Morphe patcher.
 Currently focused on SoundCloud (`com.soundcloud.android`).
 
-## 🩹 Patches list
-
-📦 SoundCloud • 5 patches
-
-| 💊 Patch | 📜 Description |
-|---|---|
-| [Enable SoundCloud Go+](#enable-soundcloud-go) | Enables SoundCloud Go+ premium features. |
-| [AMOLED dark theme](#amoled-dark-theme) | Changes the default dark theme to use true blacks for AMOLED screens. |
-| [Material You dynamic theme](#material-you-dynamic-theme) | Applies Android 12+ Material You dynamic accent colors. |
-| [Disable analytics](#disable-analytics) | Disables SoundCloud's analytics. |
-| [Disable consent popup](#disable-consent-popup) | Disables the OneTrust consent/cookies popup on first launch. |
-
-### Enable SoundCloud Go+
-
-Enables app features locked behind the subscription paywall:
-forces the current tier/plan to Go+, enables offline downloads, allows high-quality audio, suppresses upsell UI and disables ads.
-
-### AMOLED dark theme
-
-Changes the default dark theme to use true blacks for AMOLED screens. *(Disabled by default)*
-
-### Material You dynamic theme
-
-Applies Android 12+ Material You dynamic accent colors (Monet) from the system wallpaper palette to the app's links, progress bars, and highlights. *(Disabled by default)*
-
-### Disable analytics
-
-Disables SoundCloud's analytics event dispatching.
-
-### Disable consent popup
-
-Disables the OneTrust consent/cookies popup on first launch.
-
 ## 📚 How to use
 
 Click here to add these patches to Morphe:
