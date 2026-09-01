@@ -68,7 +68,7 @@ Based on patches from:
 Built on the official [MorpheApp/morphe-patches-template](https://github.com/MorpheApp/morphe-patches-template).
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.1.0](https://github.com/V4n1X/morphe-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;5 patches total
+> **[v1.2.0](https://github.com/V4n1X/morphe-patches/releases/tag/v1.2.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;5 patches total
 <details open>
 <summary>📦 SoundCloud&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
 <br>

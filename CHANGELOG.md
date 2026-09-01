@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/V4n1X/morphe-patches/compare/v1.1.0...v1.2.0) (2026-09-01)
+
+### ✨ New Features
+
+* **soundcloud:** Support 2026.08.26 and fix consent patch field ([f889d52](https://github.com/V4n1X/morphe-patches/commit/f889d5226e3c2a27310c37be1aa21ae310a70478))
+
 ## [1.1.0](https://github.com/V4n1X/morphe-patches/compare/v1.0.0...v1.1.0) (2026-08-31)
 
 ### ✨ New Features
