@@ -123,7 +123,7 @@ val enablePremiumPatch = bytecodePatch(
         )
 
         // Enable individual track download buttons in bottom sheets and track menus
-        OfflineListeningIndividualTracksExperimentFingerprint.method.addInstructions(
+        OfflineListeningIndividualTracksExperimentFingerprint.methodOrNull?.addInstructions(
             0,
             """
                 const/4 v0, 0x1
