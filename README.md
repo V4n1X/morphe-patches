@@ -19,32 +19,8 @@ Or manually add this repository URL in Morphe Manager → Sources:
 
 ## 📦 Parcello: Disable ads
 
-**Supported APK:** Parcello **2.2.20**, package `org.parcello`, version code `200220`, Android 8.0+.
-Support is **experimental** until an on-device smoke test has been completed.
-
-The default **Disable ads** patch:
-
-- Disables AdMob initialization, banner/interstitial/rewarded ads, and advertising consent dialogs.
-- Removes the automatic Mobile Ads initialization provider, ad-only Android components and advertising permissions.
-- Removes the Symplr/advertising consent bootstrap, preventing its Outbrain loading path.
-- Hides ad slots and promotional banners and neutralizes direct sponsor image downloads and links.
-- Preserves delayed push-notification initialization, tracking data, barcode scanning, and purchase entitlements.
-
-This disables advertising; it does **not** delete every bundled SDK class, unlock premium, or disable all analytics.
-The supplied APK has passed local Morphe patch execution, resource/DEX compilation and JavaScript checks;
-actual app startup, tracking, login, scanning and notifications still need testing on an Android device.
-
-### Using the new patch
-
-For local testing, import the built `.mpp` bundle from `patches/build/libs/` in Morphe Manager,
-select the original Parcello 2.2.20 APK and enable **Disable ads**. Experimental targets may need
-to be shown/enabled in the Manager. Do not use a previously modified APK.
-
-For distribution through the existing GitHub source, commit the feature with a conventional message
-such as `feat(parcello): disable advertising in version 2.2.20`, then publish it to `main`.
-The existing Release workflow builds the bundle and updates the patch list, README and source metadata.
-**Until that release is published, the existing GitHub source still serves the old bundle.**
-Original/decompiled/patched APK files must remain local and must not be included in a commit or release.
+Disables advertising, advertising consent prompts and promotional banners in Parcello **2.2.20** (Android 8.0+).
+Preserves tracking, barcode scanning, notifications and purchase entitlements.
 
 ## ⚖️ Disclaimer
 
@@ -76,8 +52,8 @@ Built on the official [MorpheApp/morphe-patches-template](https://github.com/Mor
 
 **🎯 Supported versions:**
 
-| 2026.08.26-release |
-| :---: |
+| 2026.08.26-release | 🧪&nbsp;2026.09.23-release |
+| :---: | :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
@@ -106,6 +82,8 @@ Built on the official [MorpheApp/morphe-patches-template](https://github.com/Mor
 
 <!-- PATCHES_END -->
 
+🧪 Experimental versions still require on-device testing.
+
 ## 🛠️ Building
 
 ```sh
@@ -115,23 +93,6 @@ Built on the official [MorpheApp/morphe-patches-template](https://github.com/Mor
 The built `.mpp` file will be at `patches/build/libs/`.
 Use **JDK 21**, as in CI. The Morphe dependency registry requires `gpr.user` / `gpr.key`
 Gradle properties or the `GITHUB_ACTOR` / `GITHUB_TOKEN` environment variables.
-Never commit access tokens.
-
-### Verification
-
-```sh
-# Builds the Android bundle and runs resource regression checks (no APK needed).
-./gradlew :patches:buildAndroid :patches:check
-
-# Also applies the patch to a legally obtained original APK and rebuilds it locally.
-./gradlew :patches:buildAndroid :patches:testParcelloAds \
-  -PparcelloApk='APK/Parcello+Sendungsverfolgung+-+_2.2.20_APKPure.apk'
-```
-
-The optional APK test verifies bundle discovery, native AdMob method bodies and modified assets.
-When Node.js is available, it also syntax-checks the JavaScript and tests advertising promises
-and delayed notification setup without network requests. Test artifacts stay in the ignored build directory.
-`./gradlew :patches:generatePatchesList` regenerates metadata from the current bundle, not older build artifacts.
 
 ## 📜 License
 

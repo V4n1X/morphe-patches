@@ -42,14 +42,40 @@ tasks {
         providers.gradleProperty("parcelloApk").orNull?.let { args(it) }
     }
 
+    val testSoundCloudPremium = register<JavaExec>("testSoundCloudPremium") {
+        group = "verification"
+        description = "Checks SoundCloud feature branches; optionally patches -PsoundcloudApk=<APK/APKM path>."
+        dependsOn(testClasses, buildAndroid)
+        classpath = sourceSets["test"].runtimeClasspath
+        mainClass.set("app.v4n1x.patches.soundcloud.premium.SoundCloudPremiumTestKt")
+        workingDir = rootProject.projectDir
+        maxHeapSize = "2g"
+        systemProperty("soundcloudPatchBundle", jar.get().archiveFile.get().asFile.absolutePath)
+        providers.gradleProperty("soundcloudApk").orNull?.let { args(it) }
+    }
+
+    val testSoundCloudCompatibility = register<JavaExec>("testSoundCloudCompatibility") {
+        group = "verification"
+        description = "Verifies all SoundCloud patches against -PsoundcloudApk=<APK/APKM path>."
+        dependsOn(testClasses, buildAndroid)
+        classpath = sourceSets["test"].runtimeClasspath
+        mainClass.set("app.v4n1x.patches.soundcloud.SoundCloudCompatibilityTestKt")
+        workingDir = rootProject.projectDir
+        maxHeapSize = "2g"
+        systemProperty("soundcloudPatchBundle", jar.get().archiveFile.get().asFile.absolutePath)
+        providers.gradleProperty("soundcloudApk").orNull?.let { args(it) }
+        args(providers.gradleProperty("soundcloudPatchSelection").getOrElse("all"))
+        onlyIf { providers.gradleProperty("soundcloudApk").isPresent }
+    }
+
     test {
         // Run our standalone checks even when no JUnit framework is configured.
-        dependsOn(testParcelloAds)
+        dependsOn(testParcelloAds, testSoundCloudPremium, testSoundCloudCompatibility)
         failOnNoDiscoveredTests = false
     }
 
     check {
-        dependsOn(testParcelloAds)
+        dependsOn(testParcelloAds, testSoundCloudPremium, testSoundCloudCompatibility)
     }
 
     register<JavaExec>("generatePatchesList") {
