@@ -3,7 +3,7 @@ group = "app.v4n1x"
 patches {
     about {
         name = "V4n1X Patches"
-        description = "Patches for SoundCloud"
+        description = "Patches for SoundCloud and Parcello"
         source = "https://github.com/V4n1X/morphe-patches.git"
         author = "V4n1X"
         contact = "na"
@@ -24,16 +24,42 @@ dependencies {
 
     compileOnly(libs.gson)
     patchListGeneratorClasspath(libs.gson)
+
+    // Already used by Morphe Patcher; needed to collect its patch results in tests.
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
 }
 
 tasks {
+    val testParcelloAds = register<JavaExec>("testParcelloAds") {
+        group = "verification"
+        description = "Checks Parcello ad removal; optionally applies it to -PparcelloApk=<APK path>."
+        dependsOn(testClasses, buildAndroid)
+        classpath = sourceSets["test"].runtimeClasspath
+        mainClass.set("app.v4n1x.patches.parcello.ads.ParcelloAdsTestKt")
+        workingDir = rootProject.projectDir
+        maxHeapSize = "2g"
+        systemProperty("parcelloPatchBundle", jar.get().archiveFile.get().asFile.absolutePath)
+        providers.gradleProperty("parcelloApk").orNull?.let { args(it) }
+    }
+
+    test {
+        // Run our standalone checks even when no JUnit framework is configured.
+        dependsOn(testParcelloAds)
+        failOnNoDiscoveredTests = false
+    }
+
+    check {
+        dependsOn(testParcelloAds)
+    }
+
     register<JavaExec>("generatePatchesList") {
         description = "Build patch with patch list"
 
-        dependsOn(build)
+        dependsOn(build, buildAndroid)
 
         classpath = sourceSets["main"].runtimeClasspath + patchListGeneratorClasspath
         mainClass.set("util.PatchListGeneratorKt")
+        args(jar.get().archiveFile.get().asFile.absolutePath)
     }
 
     // Used by gradle-semantic-release-plugin.

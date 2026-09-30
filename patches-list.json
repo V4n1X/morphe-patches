@@ -31,6 +31,39 @@
       "options": []
     },
     {
+      "name": "Disable ads",
+      "description": "Disables AdMob banner, interstitial and rewarded ads, removes sponsored/promotional banners, and skips advertising consent prompts.",
+      "default": true,
+      "dependencies": [
+        "BytecodePatch"
+      ],
+      "compatiblePackages": [
+        {
+          "packageName": "org.parcello",
+          "name": "Parcello",
+          "description": null,
+          "apkFileType": "APK",
+          "appIconColor": null,
+          "signatures": null,
+          "targets": [
+            {
+              "version": "2.2.20",
+              "versionCodes": {
+                "ARM64_V8A": 200220,
+                "ARMEABI_V7A": 200220,
+                "X86_64": 200220,
+                "X86": 200220
+              },
+              "isExperimental": true,
+              "minSdk": 26,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Disable analytics",
       "description": "Disables SoundCloud's analytics.",
       "default": true,
