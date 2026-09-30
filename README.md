@@ -45,7 +45,7 @@ Based on patches from:
 Built on the official [MorpheApp/morphe-patches-template](https://github.com/MorpheApp/morphe-patches-template).
 
 <!-- PATCHES_START EXPANDED -->
-> **Local source:** `main` • 6 patches total. Latest published release: [v1.3.0](https://github.com/V4n1X/morphe-patches/releases/tag/v1.3.0) (without Parcello).
+> **[v1.4.0](https://github.com/V4n1X/morphe-patches/releases/tag/v1.4.0)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;6 patches total
 <details open>
 <summary>📦 SoundCloud&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
 <br>
@@ -76,7 +76,7 @@ Built on the official [MorpheApp/morphe-patches-template](https://github.com/Mor
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Disable ads](#parcello-disable-ads) | Disables AdMob ads and advertising consent prompts; removes sponsored/promotional banners. |  |
+| [Disable ads](#disable-ads) | Disables AdMob banner, interstitial and rewarded ads, removes sponsored/promotional banners, and skips advertising consent prompts. |  |
 
 </details>
 
