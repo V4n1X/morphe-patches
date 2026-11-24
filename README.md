@@ -41,6 +41,7 @@ Based on patches from:
 
 - [hoo-dles/morphe-patches](https://github.com/hoo-dles/morphe-patches) — AMOLED dark theme, analytics/telemetry patch
 - [kondratjev/morphe-patches](https://github.com/kondratjev/morphe-patches) — Enable SoundCloud Go, consent popup & analytics patches
+- [johninnld/nl-morphe-patches](https://gitlab.com/johninnld/nl-morphe-patches) — SoundCloud Go reference implementation, ad-config handling and plan-transition hooks
 
 Built on the official [MorpheApp/morphe-patches-template](https://github.com/MorpheApp/morphe-patches-template).
 
